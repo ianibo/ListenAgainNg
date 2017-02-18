@@ -2,8 +2,12 @@ package lang
 
 class BootStrap {
 
-    def init = { servletContext ->
-    }
-    def destroy = {
-    }
+  def schedulerService
+
+  def init = { servletContext ->
+    schedulerService.start()
+  }
+
+  def destroy = {
+  }
 }

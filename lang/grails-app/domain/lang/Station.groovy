@@ -2,17 +2,23 @@ package lang
 
 class Station {
 
+  String slug
   String name
-  String baseUrl
+  String stationUrl
+  String streamingUrl
 
   static constraints = {
-    baseUrl blank: false, nullable: false // , unique: true
-       name blank: false, nullable: false // , unique: true
+            slug blank: false, nullable: false // , unique: true
+      stationUrl blank: false, nullable: false // , unique: true
+    streamingUrl blank: false, nullable: false // , unique: true
+            name blank: false, nullable: false // , unique: true
   }
 
   static mapping = {
     table 'stn'
-       name column: 'stn_name'
-    baseUrl column: 'stn_base_url'
+            slug column: 'stn_slug'
+            name column: 'stn_name'
+      stationUrl column: 'stn_station_url'
+    streamingUrl column: 'stn_streaming_url'
   }
 }

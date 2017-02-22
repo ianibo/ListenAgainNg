@@ -2,7 +2,7 @@ package lang
 
 class ScheduleEntry {
 
-  Staion stn
+  Station stn
   String programmeSlug
   String programmeName
   Long start_day
@@ -11,7 +11,7 @@ class ScheduleEntry {
   Long duration
 
   static constraints = {
-            owner blank: false, nullable: false // , unique: true
+              stn blank: false, nullable: false // , unique: true
     programmeSlug blank: false, nullable: true // , unique: true
     programmeName blank: false, nullable: false // , unique: true
         start_day blank: false, nullable: false // , unique: true

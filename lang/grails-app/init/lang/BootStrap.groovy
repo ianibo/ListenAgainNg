@@ -19,8 +19,9 @@ class BootStrap {
 
   def registerProgramme(stnSlug, programmeName, day, hour, minute, duration) {
     def stn = Station.findBySlug(stnSlug);
-    def se = ScheduleEntry.findByStnAndProgrammeSlug(stn,programmeSlug)
+    def se = ScheduleEntry.findByStnAndProgrammeName(stn,programmeName)
     if ( se == null ) {
+      se = new ScheduleEntry(stn:stn, programmeName:programmeName, start_day:day, start_hour:hour, start_minute:minute, duration:duration).save(flush:true, failOnError:true);
     }
   }
 }
